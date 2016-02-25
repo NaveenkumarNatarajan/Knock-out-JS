@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript" src="knock-out.js" ></script>
+<script type="text/javascript" src="jquery-1.12.1.min.js" ></script>
+<script>
+$(document).ready(function () {
+        var json = [  
+		      {"name":"Johnn","age":"28"},
+                      {"name":"Charlie","age":"32"}
+		   ];
+        ko.applyBindings({
+            dataValues: json
+        });
+    });
+</script>
+</head>
+<table border=1>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: dataValues">
+        <tr>
+            <td data-bind="text:name"></td>
+            <td data-bind="text:age "></td>
+        </tr>
+    </tbody>
+</table>
+</html>
